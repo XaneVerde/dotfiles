@@ -1,0 +1,26 @@
+bar:
+  font: MesloLGS Nerd Font:size=24:bold
+  location: top
+  layer: bottom
+  margin: 0
+  height: 30 
+  background: 0000000D  # 1e1e2eb3 # Catppuccin Mocha-ish background
+
+  left:
+    - clock:
+        time-format: "%I:%M"
+        content:
+          string:
+            text: "{time}"
+            foreground: cdd6f4ff
+  
+  right:
+    - battery:
+        name: BAT0
+        poll-interval: 60000
+        content:
+          string:
+            text: "{capacity}%"
+            foreground: cdd6f4ff #fab387ff
+
+
