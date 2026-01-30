@@ -1,0 +1,4 @@
+XKB_DEFAULT_LAYOUT=us
+export XCURSOR_THEME="Bibata-Modern-Ice"
+export XCURSOR_SIZE="48"
+XCURSOR_SIZE=48

@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<labwc_config>
+
+  <core>
+    <decoration>server</decoration>
+  </core>
+
+  <windowRules>
+    <windowRule identifier="*">
+      <serverDecoration>no</serverDecoration>
+    </windowRule>
+  </windowRules>
+
+  <keyboard>
+    <default />
+    <keybind key="W-d">
+      <action name="ToggleDecorations" />
+    </keybind>
+  </keyboard>
+
+
+  <!-- Placement -->
+  <placement>
+    <policy>cursor</policy>
+  </placement>
+  <!-- Theme -->
+  <theme>
+    <name>Nordic-Mocha</name>
+    <cornerRadius>12</cornerRadius>
+    <icon>Adwaita</icon>
+    <dropShadows>yes</dropShadows>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
+  </theme>
+  <!-- Margins  add optional output="<MONITOR>" -->
+  <margin top="5" bottom="3" left="5" right="5"/>
+  <!-- Keyboard -->
+  <keyboard>
+    <numlock>on</numlock>
+    <repeatRate>25</repeatRate>
+    <repeatDelay>300</repeatDelay>
+    <!-- Window Management -->
+    <!-- Centre 80% -->
+    <keybind key="W-C-c">
+      <action name="SetDecorations" decorations="border"/>
+      <action name="SnapToRegion" region="center-80"/>
+    </keybind>
+    <keybind key="W-C-m">
+      <action name="ToggleMaximize"/>
+    </keybind>
+    <!-- Snap binds double hit arrow keys to snap window to edge -->
+    <keybind key="W-C-Left">
+      <action name="SetDecorations" decorations="border"/>
+      <action name="SnapToEdge" direction="left" combine="yes"/>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="SetDecorations" decorations="border"/>
+      <action name="SnapToEdge" direction="right" combine="yes"/>
+    </keybind>
+    <keybind key="W-C-Up">
+      <action name="SetDecorations" decorations="border"/>
+      <action name="SnapToEdge" direction="up" combine="yes"/>
+    </keybind>
+    <keybind key="W-C-Down">
+      <action name="SetDecorations" decorations="border"/>
+      <action name="SnapToEdge" direction="down" combine="yes"/>
+    </keybind>
+    <keybind key="W-C-d">
+      <action name="SetDecorations" decorations="full"/>
+    </keybind>
+    <keybind key="W-C-b">
+      <action name="SetDecorations" decorations="border"/>
+    </keybind>
+    <!-- Workspaces -->
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4"/>
+    </keybind>
+    <!-- Send to workspace -->
+    <keybind key="W-S-1">
+      <action name="SendToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop" to="4"/>
+    </keybind>
+    <!-- Window actions -->
+    <keybind key="W-q">
+      <action name="Close"/>
+    </keybind>
+    <!-- Window switching (Alt-Tab) -->
+    <keybind key="A-Tab">
+      <action name="NextWindow"/>
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow"/>
+    </keybind>
+    <!-- Applications Menu (Alt+F3) -->
+    <keybind key="A-F3">
+      <action name="Execute" command="wofi --show drun"/>
+    </keybind>
+    <!-- Applications -->
+    <keybind key="W-t">
+      <action name="Execute" command="foot -e htop"/>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute" command="foot -e nvim"/>
+    </keybind>
+    <keybind key="W-Return">
+      <action name="Execute" command="foot"/>
+    </keybind>
+    <keybind key="W-w">
+      <action name="Execute" command="librewolf"/>
+    </keybind>
+    <keybind key="W-l">
+      <action name="Execute" command="wlogout"/>
+    </keybind>
+    <keybind key="W-e">
+      <action name="Execute" command="thunar"/>
+    </keybind>
+    <!-- Right-click menu -->
+    <keybind key="W-S-space">
+      <action name="ShowMenu" menu="root-menu"/>
+    </keybind>
+    <keybind key="W-space">
+      <action name="Execute">
+        <command>sh -c 'wofi --show drun'</command>
+      </action>  
+    </keybind>
+    <!-- Reconfigure -->
+    <keybind key="W-S-r">
+      <action name="Reconfigure"/>
+    </keybind>
+    <!-- Screenshot -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>sh -c 'grim /home/xane/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png'</command>
+      </action>
+    </keybind>
+    <keybind key="W-S-s">
+      <action name="Execute">
+          <command>sh -c 'grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png'</command>
+      </action>    
+    </keybind>
+    <!-- Display configuration -->
+    <keybind key="W-C-F12">
+      <action name="Execute" command="wlr-randr --output Virtual-1 --mode 1920x1080"/>
+    </keybind>
+    <!-- Exit -->
+    <keybind key="W-A-e">
+      <action name="Exit"/>
+    </keybind>
+  </keyboard>
+  <!-- Mouse -->
+  <mouse>
+    <default/>
+    <context name="Frame">
+      <mousebind button="A-Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      <mousebind button="A-Right" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Move"/>
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize"/>
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="root-menu"/>
+      </mousebind>
+    </context>
+  </mouse>
+  <!-- Desktops -->
+  <desktops number="4"/>
+  <!-- Snap Regions -->
+  <regions>
+    <region name="center-80" x="10%" y="10%" width="80%" height="80%"/>
+  </regions>
+  <!-- Window rules -->
+  <windowRules>
+    <windowRule identifier="foot">
+      <action name="SnapToEdge" direction="left"/>
+    </windowRule>
+    <windowRule identifier="librewolf">
+      <action name="ToggleMaximize" />
+      <action name="SetDecorations" decorations="none" />
+    </windowRule>
+  </windowRules>
+  <!-- Resize edges -->
+  <resize>
+    <popupShow>Never</popupShow>
+  </resize>
+  <!-- Focus -->
+  <focus>
+    <followMouse>yes</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>no</raiseOnFocus>
+  </focus>
+</labwc_config>

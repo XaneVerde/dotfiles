@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Set display resolution (uncomment for VM or specific resolution needs)
+#wlr-randr --output Virtual-1 --mode 1920x1080 &
+
+# Set wallpaper
+swaybg -i $HOME/Backgrounds/blue-landscape.png -m fill &
+
+# Start waybar
+waybar &
+
+# Polkit authentication agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Notification daemon
+mako &
+
+# Network manager applet
+nm-applet &
+
+# System monitoring
+conky &
+

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Set display resolution (uncomment for VM or specific resolution needs)
+#wlr-randr --output Virtual-1 --mode 1920x1080 &
+
+# Set wallpaper
+/home/xane/.local/bin/waypaper --random &
+
+# Start waybar
+yambar &
+
+# Polkit authentication agent
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Bluelight filter
+wlsunset -l 39.7 -L -104.9 &
+
+
+
+
+
