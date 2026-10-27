@@ -1,0 +1,92 @@
+/* Catppuccin Mocha Palette Definitions */
+@define-color base      #1e1e2e;
+@define-color surface0  #313244;
+@define-color surface1  #45475a;
+@define-color text      #cdd6f4;
+@define-color green     #a6e3a1;
+@define-color yellow    #f9e2af;
+@define-color red       #f38ba8;
+
+/* Global Font Override for all text and icons */
+* {
+    font-family: "MesloLGL Nerd Font", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Global Bar Container Styling */
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: @text;
+}
+
+/* Module Base Styling */
+.modules-left, .modules-center, .modules-right {
+    margin: 4px 8px;
+}
+
+/* Clock Module Styling */
+#clock {
+    color: @base;
+    background-color: @green;
+    padding: 0px 12px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+/* Workspaces Styling */
+#workspaces button {
+    color: @text;
+    background-color: @surface0;
+    padding: 0px 8px;
+    border-radius: 4px;
+    margin: 0px 2px;
+}
+
+#workspaces button.active {
+    color: @base;
+    background-color: @green;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @base;
+}
+
+/* Taskbar Styling */
+#taskbar button {
+    color: @text;
+    background-color: @surface0;
+    padding: 0px 6px;
+    border-radius: 4px;
+    margin: 0px 3px;
+}
+
+#taskbar button.active {
+    background-color: @surface1;
+    border-bottom: 2px solid @green;
+}
+
+/* Battery Module Styling (Inverted to match the Clock module) */
+#battery {
+    color: @base;
+    background-color: @green;
+    padding: 0px 12px;
+    border-radius: 4px;
+}
+
+#battery.warning {
+    color: @base;
+    background-color: @yellow;
+}
+
+#battery.critical {
+    color: @base;
+    background-color: @red;
+}
+
+#battery.charging, #battery.plugged {
+    color: @base;
+    background-color: @green;
+}
+

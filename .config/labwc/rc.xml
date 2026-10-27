@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<labwc_config>
+  <!-- Workspace Definition -->
+  <desktops number="4">
+    <popupTime>1000</popupTime>
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+    </names>
+  </desktops>
+  <focus>
+    <followMouse>yes</followMouse>
+    <followMouseRequiresMovement>yes</followMouseRequiresMovement>
+    <raiseOnFocus>yes</raiseOnFocus>
+  </focus>
+  <keyboard>
+    <default/>
+    <!-- The W- prefix refers to the Super key -->
+    <!-- WINDOW SNAPPING (Left, Right, Maximize) -->
+    <keybind key="W-Left">
+      <action name="ToggleSnapToEdge" direction="left"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="ToggleSnapToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="ToggleSnapToEdge" direction="up"/>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="ToggleSnapToEdge" direction="down"/>
+    </keybind>
+    <!-- Workspace Navigation (Super + Number) -->
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1"/>
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2"/>
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3"/>
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4"/>
+    </keybind>
+    <!-- Send Windows to Workspace (Super + Shift + Number) -->
+    <keybind key="W-S-1">
+      <action name="SendToDesktop" to="1" follow="yes"/>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop" to="2" follow="yes"/>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop" to="3" follow="yes"/>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop" to="4" follow="yes"/>
+    </keybind>
+    <!-- Launch Neovim in foot -->
+    <keybind key="A-x">
+      <action name="Execute" command="foot nvim"/>
+    </keybind>
+    <!-- Launch foot Terminal -->
+    <keybind key="A-return">
+      <action name="Execute" command="foot"/>
+    </keybind>
+    <!-- Launch foot Terminal -->
+    <keybind key="A-a">
+      <action name="Execute" command="pavucontrol"/>
+    </keybind>
+    <!-- Nautilus -->
+    <keybind key="W-e">
+      <action name="Execute" command="nautilus"/>
+    </keybind>
+    <!-- Launch Application Menu (Tofi) -->
+    <keybind key="W-space">
+      <action name="Execute">
+        <command>sh -c "pkill -x fuzzel || fuzzel"</command>
+      </action>
+    </keybind>
+    <keybind key="A-p">
+      <action name="Execute">
+        <command>sh -c "wlrctl toplevel list | tofi | awk '{print $1}' | xargs -I {} wlrctl toplevel focus 'id:{}'"</command>
+      </action>
+    </keybind>
+    <keybind key="W-return">
+      <action name="Execute" command="foot"/>
+    </keybind>
+    <keybind key="W-z">
+      <action name="Execute" command="freetube"/>
+    </keybind>
+    <!-- Thorium -->
+    <keybind key="W-w">
+      <action name="Execute" command="brave-browser"/>
+    </keybind>
+    <!-- Close Active Window -->
+    <keybind key="W-q">
+      <action name="Close"/>
+    </keybind>
+    <!-- launch btop -->
+    <keybind key="W-b">
+      <action name="Execute" command="foot  btop"/>
+    </keybind>
+    <keybind key="W-t">
+      <action name="Execute" command="foot  htop"/>
+    </keybind>
+    <!-- Launch Logout Menu -->
+    <keybind key="A-l">
+      <action name="Execute" command="wlogout"/>
+    </keybind>
+    <keybind key="A-n">
+      <action name="Execute" command="foot  ncmpcpp"/>
+    </keybind>
+    <keybind key="A-m">
+      <action name="Execute" command="foot  mpc toggle"/>
+    </keybind>
+    <!-- Full screen screenshot -->
+    <keybind key="Print">
+      <action name="Execute" command="sh -c 'grim ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'"/>
+    </keybind>
+    <!-- Alt + Print Screen: Select an area and save -->
+    <keybind key="A-Print">
+      <action name="Execute" command="sh -c 'grim -g &quot;$(slurp)&quot; ~/Pictures/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png'"/>
+    </keybind>
+    <!-- Shift + Print Screen: Select an area and copy to clipboard -->
+    <keybind key="S-Print">
+      <action name="Execute" command="sh -c 'grim -g &quot;$(slurp)&quot; - | wl-copy'"/>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveToOutput" direction="right"/>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveToOutput" direction="left"/>
+    </keybind>
+    <keybind key="A-r">
+      <action name="Execute" command="foot  labwc -r"/>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute" command="/usr/local/bin/rust_widgets"/>
+    </keybind>
+    <keybind key="A-period">
+      <action name="Execute" command="mpc next"/>
+    </keybind>
+    <keybind key="A-comma">
+      <action name="Execute" command="mpc prev"/>
+    </keybind>
+  </keyboard>
+  <windowRules>
+    <!-- Always open foot maximized on launch -->
+    <windowRule identifier="foot">
+      <action name="Maximize"/>
+    </windowRule>
+    <windowRule class="org.pwmt.zathura">
+      <decor>no</decor>
+    </windowRule>
+    <windowRule identifier="org.gnome.Nautilus">
+      <action name="SnapToEdge" direction="left"/>
+    </windowRule>
+  </windowRules>
+  <theme>
+    <name>OB-Everforest-Dark</name>
+    <dropShadows>yes</dropShadows>
+    <icon>Tela-dracula</icon>
+    <dropShadowsOnTiled>yes</dropShadowsOnTiled>
+    <maximizedDecoration>none</maximizedDecoration>
+  </theme>
+  <core>
+    <decoration>server</decoration>
+    <gap>2</gap>
+  </core>
+  <placement>
+    <policy>automatic</policy>
+  </placement>
+  <libinput>
+    <device>
+      <accelProfile>adaptive</accelProfile>
+      <clickMethod>buttonAreas</clickMethod>
+      <naturalScroll>yes</naturalScroll>
+    </device>
+  </libinput>
+
+<mouse>
+  <default />
+  <context name="Root">
+    <mousebind button="Right" action="Press" />
+    <mousebind button="Right" action="Click" />
+  </context>
+</mouse>   
+    
+
+
+    
+    
+</labwc_config>

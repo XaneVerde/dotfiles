@@ -1,0 +1,29 @@
+# swaybg --output HDMI-1 --image /home/xane/Pictures/V3.png --output ePD-1 -c "#1B3423" &
+# cat dark green  "#1e2d24" 
+#swaybg -o eDP-1 -i /home/xane/Pictures/wallpaper/catppuccin/voxel-city.jpg -o HDMI-A-1 -i /home/xane/Pictures/wallpaper/catppuccin/cat-vibin.png &
+
+/usr/libexec/polkit-mate-authentication-agent-1 &
+
+
+wlr-randr --output HDMI-A-1 --scale 2.0 &
+
+# Broadcast global color preference for GTK4/Libadwaita apps
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
+# Start the settings daemon
+xsettingsd &
+
+waybar &
+# Set a unique random wallpaper for each monitor
+~/.config/labwc/random_bg.sh &
+
+# Core Audio Stack Configuration
+#pipewire &
+#pipewire-pulse &
+#wireplumber &
+
+
+
+
+#sleep 2 && conky -c ~/.config/conky/v4.conf &

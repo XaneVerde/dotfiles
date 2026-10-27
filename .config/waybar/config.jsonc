@@ -1,0 +1,51 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "spacing": 4,
+
+    // Layout
+    "modules-left": ["clock", "ext/workspaces"],
+    "modules-center": ["wlr/taskbar"],
+    "modules-right": ["battery"],
+
+    // Clock Module (No click actions)
+    "clock": {
+        "format": "{:%I:%M}",
+        "tooltip-format": "{:%m-%d-%Y}"
+    },
+
+    // Workspaces Module
+    "ext/workspaces": {
+        "format": "{name}",
+        "on-click": "activate"
+    },
+
+    // Taskbar Module
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
+
+    // Battery Module - Hardcoded Pango Font and Size Strings for MesloLGL
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span font_family='MesloLGL Nerd Font' size='125%'>{icon}</span>  {capacity}%",
+        "format-charging": "<span font_family='MesloLGL Nerd Font' size='125%'>\uf0e7</span> {capacity}%",
+        "format-plugged": "<span font_family='MesloLGL Nerd Font' size='125%'>\uf1e6</span> {capacity}%",
+        "format-icons": [
+            "\uf244", 
+            "\uf243", 
+            "\uf242", 
+            "\uf241", 
+            "\uf240"
+        ],
+        "tooltip": false
+    }
+}
+
