@@ -132,7 +132,7 @@
       <action name="Execute" command="foot labwc -r"/>
     </keybind>
     <keybind key="A-w">
-      <action name="Execute" command="foot wego"/>
+      <action name="Execute" command="foot --hold wego"/>
     </keybind>
     <keybind key="A-period">
       <action name="Execute" command="mpc next"/>
