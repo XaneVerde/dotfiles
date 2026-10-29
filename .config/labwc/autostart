@@ -22,7 +22,7 @@ waybar &
 #pipewire &
 #pipewire-pulse &
 #wireplumber &
-
+wlsunset -l 39.7 -L -104.9 &     
 
 
 

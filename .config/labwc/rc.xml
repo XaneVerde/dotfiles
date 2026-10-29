@@ -26,10 +26,10 @@
       <action name="ToggleSnapToEdge" direction="right"/>
     </keybind>
     <keybind key="W-Up">
-      <action name="ToggleSnapToEdge" direction="up"/>
+      <action name="ToggleSnapToEdge" direction="up-right"/>
     </keybind>
     <keybind key="W-Down">
-      <action name="ToggleSnapToEdge" direction="down"/>
+      <action name="ToggleSnapToEdge" direction="down-right"/>
     </keybind>
     <!-- Workspace Navigation (Super + Number) -->
     <keybind key="W-1">
@@ -77,11 +77,6 @@
     <keybind key="W-space">
       <action name="Execute">
         <command>sh -c "pkill -x fuzzel || fuzzel"</command>
-      </action>
-    </keybind>
-    <keybind key="A-p">
-      <action name="Execute">
-        <command>sh -c "wlrctl toplevel list | tofi | awk '{print $1}' | xargs -I {} wlrctl toplevel focus 'id:{}'"</command>
       </action>
     </keybind>
     <keybind key="W-return">
@@ -134,7 +129,7 @@
       <action name="MoveToOutput" direction="left"/>
     </keybind>
     <keybind key="A-r">
-      <action name="Execute" command="foot  labwc -r"/>
+      <action name="Execute" command="foot labwc -r"/>
     </keybind>
     <keybind key="W-r">
       <action name="Execute" command="/usr/local/bin/rust_widgets"/>
@@ -155,7 +150,7 @@
       <decor>no</decor>
     </windowRule>
     <windowRule identifier="org.gnome.Nautilus">
-      <action name="SnapToEdge" direction="left"/>
+      <action name="SnapToEdge" direction="right"/>
     </windowRule>
   </windowRules>
   <theme>
@@ -183,8 +178,10 @@
 <mouse>
   <default />
   <context name="Root">
-    <mousebind button="Right" action="Press" />
-    <mousebind button="Right" action="Click" />
+      <mousebind button="Right" action="Press" />
+      <mousebind button="Left" action="Press" />
+      <mousebind button="Right" action="Click" />
+      <mousebind button="Left" action="Click" />
   </context>
 </mouse>   
     
