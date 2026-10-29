@@ -131,8 +131,8 @@
     <keybind key="A-r">
       <action name="Execute" command="foot labwc -r"/>
     </keybind>
-    <keybind key="W-r">
-      <action name="Execute" command="/usr/local/bin/rust_widgets"/>
+    <keybind key="A-w">
+      <action name="Execute" command="foot wego"/>
     </keybind>
     <keybind key="A-period">
       <action name="Execute" command="mpc next"/>
