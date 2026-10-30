@@ -1,0 +1,20 @@
+# MPD Connection Settings
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_music_dir = "/home/xane/Music"
+
+# Behavior Settings
+browser_playlist_prefix = "current"
+
+# Visualizer settings (Matches your mpd.conf fifo output)
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+
+# Interface Look
+playlist_display_mode = "columns"
+autocenter_mode = "yes"
+titles_visibility = "no"
+
