@@ -1,5 +1,5 @@
 This is an extra light Labwc based build. 
-Consumes about ~ 500 MB @ idle.
+Consumes ~ 500 MB RAM @ idle.
 No Display Mgr. (TTY1 set to auto launch LabWC - IE: "exec dbus-run-session -- labwc" in .bash_profile) 
 NO PIPE MENU (completely disabled)
 No frills Waybar - TIME, ext/workspaces, wlr/taskbar, BATT.
